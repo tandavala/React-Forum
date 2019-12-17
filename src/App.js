@@ -10,18 +10,22 @@ import LinkList from "./Components/Link/LinkList";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" render={() => <Redirect to="/new/1" />} />
-        <Route exaxt path="/create" componet={CreateLink} />
-        <Route exact path="/login" componet={Login} />
-        <Route exact path="/forgot" componet={ForgotPassword} />
-        <Route exact path="/search" componet={SearchLink} />
-        <Route exact path="/top" componet={LinkList} />
-        <Route exact path="/new/:page" componet={LinkList} />
-        <Route exact path="/link/:linkId" componet={LinkDetail} />
-      </Switch>
-    </BrowserRouter>
+    <>
+      <h3>Ola mund</h3>
+
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/new/1" />} />
+          <Route path="/create" component={CreateLink} />
+          <Route path="/login" component={Login} />
+          <Route path="/forgot" component={ForgotPassword} />
+          <Route path="/search" component={SearchLink} />
+          <Route path="/top" component={LinkList} />
+          <Route path="/new/:page" component={LinkList} />
+          <Route path="/link/:linkId" component={LinkDetail} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
