@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-const useFormValidation = initialState => {
-  const [values, setValues] = useState(initialState);
+function useFormValidation(initialState) {
+  const [values, setValues] = React.useState(initialState);
 
-  const handleChamge = event => {
+  const handleChange = event => {
     event.persist();
     setValues(previousValues => ({
       ...previousValues,
@@ -13,9 +13,10 @@ const useFormValidation = initialState => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(values);
+    console.log({ values });
   };
-  return { handleSubmit, handleChamge, values };
-};
+
+  return { handleSubmit, handleChange, values };
+}
 
 export default useFormValidation;
